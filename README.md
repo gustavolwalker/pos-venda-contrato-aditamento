@@ -16,9 +16,9 @@ Aplicação para controle de aditamento em contratos.
   
 ## Arquitetura
 
-A aplicação foi construida para atender os requisitos de disponibilização de uma api com dois endpoints 
-para aditamento de contratos, dado requisitos do teste foi desenvolvidos estruturas de configuração 
-para validação de payload de entrada e modificação de saída.
+A aplicação foi construida para atender os requisitos de disponibilização de uma api com dois 
+endpoints para aditamento de contratos, dado requisitos do teste foi desenvolvidos estruturas 
+de configuração para validação de payload de entrada e modificação de saída.
 
 
 ### Controller
@@ -28,38 +28,35 @@ Controller responsável por receber as requisições para os dois endpoints do s
 
 ### Config
 
-- AditamentoHandlerInterceptor
-Config para validar a informação da chave header 'itau-pos-venda-teste' obrigatória para todas as requisições e que deve conter um UUID v4 válido;
+- AditamentoHandlerInterceptor: Config para validar a informação da chave header 
+'itau-pos-venda-teste' obrigatória para todas as requisições e que deve conter um UUID v4 válido;
 
-- AditamentoAdvice
-Config para modificação do response (id_contrato, ultimo_digito_contrato) podendo assim manter o estado do dado durante a aplicação e ajustando 
-apenas quando necessário dado o cenário apresentado no response.
+- AditamentoAdvice: Config para modificação do response (id_contrato, ultimo_digito_contrato) 
+podendo assim manter o estado do dado durante a aplicação e ajustando apenas quando necessário 
+dado o cenário apresentado no response.
 
 ### Exception
 
-- AditamentoException 
-Exception genérica de execução da aplicação.
+- AditamentoException: Exception genérica de execução da aplicação.
 
-- BussinessException
-Handler de controle de Exceptions e transformação de response body error, apresenta ouvinte para a exception genérica AditamentoException e 
-MethodArgumentNotValidException na validação de payload de entrada.
+- BussinessException: Handler de controle de Exceptions e transformação de response body error, 
+apresenta ouvinte para a exception genérica AditamentoException e MethodArgumentNotValidException 
+na validação de payload de entrada.
 
 ### Service 
 
-- AditamentoService 
-Serviço de negócio para realização das ações de aditamento de contrato.
+- AditamentoService: Serviço de negócio para realização das ações de aditamento de contrato.
 
-- CalculoJurosService 
-Seriço para conexão a API de calculo de juros e dado o contexto de ambiente não produtivo realiza o calculo de juros simples.
+- CalculoJurosService: Seriço para conexão a API de calculo de juros e dado o contexto de ambiente 
+não produtivo realiza o calculo de juros simples.
 
-- ContratoService 
-Serviço de negócio com as regras da aplicação e "pseudo" controle de persistência
+- ContratoService: Serviço de negócio com as regras da aplicação e "pseudo" controle de 
+persistência.
 
 
 ## Extras
 
-- Aditamento.postman_collection.json
-Coleção Postman com acesso aos endpoints para teste
+- Aditamento.postman_collection.json: Coleção Postman com acesso aos endpoints para teste.
 
 
 
