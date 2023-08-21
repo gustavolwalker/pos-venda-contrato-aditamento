@@ -22,7 +22,7 @@ public class AditamentoAdvice implements ResponseBodyAdvice<AditamentoAbstractMo
 		}
 		return false;
 	}
-	
+
 	@Override
 	public AditamentoAbstractModel beforeBodyWrite(AditamentoAbstractModel body, MethodParameter returnType,
 			MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType,

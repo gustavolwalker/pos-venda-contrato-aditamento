@@ -16,5 +16,5 @@ class PosVendaContratoAditamentoApplicationTests {
 	void contextLoads() {
 
 		assertTrue(true);
-	}	
+	}
 }

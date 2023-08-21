@@ -31,7 +31,7 @@ public class AditamentoHandlerInterceptor implements HandlerInterceptor {
 		if (chavePosVenda == null || !chavePosVenda.matches("[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")) {
 			throw new AditamentoException("'itau-pos-venda-teste' inválidado.");
 		}
-		
+
 		return true;
 
 	}

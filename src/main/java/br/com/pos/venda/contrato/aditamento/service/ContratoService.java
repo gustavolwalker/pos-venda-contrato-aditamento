@@ -36,14 +36,14 @@ public class ContratoService {
 
 	public static void contratoContemParcelasEmAtraso(Boolean contratoContemParcelasEmAtraso) {
 
-		if (contratoContemParcelasEmAtraso.equals(true)) {
+		if (contratoContemParcelasEmAtraso) {
 			throw new AditamentoException(MensagensConst.CONTRATO_CONTEM_PARCELAS_EM_ATRASO);
 		}
 	}
 
 	public static void contratoEstaAtivo(Boolean contratoAtivo) {
 
-		if (contratoAtivo.equals(false)) {
+		if (!contratoAtivo) {
 			throw new AditamentoException(MensagensConst.CONTRATO_INATIVO);
 		}
 	}
